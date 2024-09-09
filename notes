@@ -1,0 +1,333 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --HeaderBackground: #1e1e1e;
+    /* Dark background */
+    --HeaderFont: #f4f4f4;
+    /* Light text */
+    --HoverBackground: #404040;
+    /* Darker hover background for better contrast */
+    --HoverText: #ffffff;
+    /* White text on hover for better contrast */
+}
+
+
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--HeaderBackground);
+    color: var(--HeaderFont);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    height: 100px;
+}
+
+header {
+    max-width: 100%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* position: fixed; */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.navlink {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--HeaderFont);
+}
+
+.navlink:hover,
+.card a:hover {
+    background-color: var(--HoverBackground);
+    color: var(--HoverText);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+main {
+    border: 2px solid black;
+}
+
+#Home {
+    padding: 20px;
+    background-color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+    /* Vertically center */
+    max-width: 100%;
+    position: relative;
+    /* Allows overlay positioning */
+}
+
+#Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(intro_background.jpg);
+    background-size: cover;
+    opacity: 0.3;
+    /* 60% opacity for the background */
+    z-index: 1;
+    /* Places the overlay behind the text */
+}
+
+#Home .intro {
+    text-align: center;
+    position: relative;
+    /* Keeps text above the background */
+    z-index: 2;
+    /* Ensures text is above the background */
+    color: white;
+    /* Make sure the text is readable */
+}
+
+#Home .intro h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+/* this center all the titles of each section */
+.center {
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 2px solid black;
+    display: block;
+}
+
+#Resume {
+    margin-top: 15vh;
+    /* display: block; */
+    /* display: flex; */
+}
+
+#Resume h1, .Portfolio-header{
+    font-size: 3rem;
+    text-align: center;
+    margin: 5vh;
+}
+
+.Resume_picture {
+    width: 300px;
+    /* height: 400px; */
+    border-radius: 15px;
+}
+
+#Resume .flex_for_Resume {
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+        "left_side right_side right_side"
+        "left_side no_content no_content";
+    grid-template-columns: 1fr 2fr;
+    /* Adjust column sizes as needed */
+    grid-template-rows: auto;
+    /* Adjust row size as needed */
+}
+
+#Resume .flex_for_Resume .left_side {
+    grid-area: left_side;
+}
+
+#Resume .flex_for_Resume .right_side {
+    grid-area: right_side;
+}
+
+#Resume .flex_for_Resume .no_content{
+    grid-area: no_content;
+    background-color: var(--HoverBackground);
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+    border-radius: 15px;
+    color: var(--HeaderFont);
+}
+
+.tag {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px 10px; /* Spacing inside the tag */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Clean font */
+    max-width: 200px; /* Limit width */
+}
+
+.tag .icon {
+    margin-right: 8px; /* Space between icon and text */
+    color: #333; /* Icon color */
+}
+
+.tag p {
+    margin: 0; /* Remove default margin */
+    color: #333; /* Text color */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Make the text bold */
+}
+
+#Resume .flex_for_Resume p{
+    line-height: 1.5;
+}
+
+/* baka magtaka ka bakit na center yung headerm, nasa taas yung h1 selector kasama nung sa resume */
+/* #Portfolio {
+    background-image: url(Portfolio_background.jpg);
+    border-top: 2px solid black;
+    background-size: cover;
+    max-height: 100%;
+    max-width: 100%;
+} */
+
+#Portfolio {
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid black;
+    max-height: 100%;
+    max-width: 100%;
+    padding-bottom: 35px;
+}
+
+#Portfolio::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(Portfolio_background.jpg);
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1; /* Make sure the pseudo-element is behind the content */
+}
+
+#Portfolio > * {
+    position: relative;
+    z-index: 1; /* Ensure the text stays on top of the background */
+}
+
+.works-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically if container height is set */
+    gap: 10px; /* Adjust gap between items */
+}
+
+.works {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: #1e1e1e;
+    height: 200px;
+    width: 300px;
+}
+
+
+
+footer {
+    border-top: 2px solid black;
+    padding: 20px;
+    background-color: var(--HeaderBackground);
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: var(--HeaderFont);
+    text-decoration: none;
+}
+
+.social-media a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.coming-soon-image {
+    width: 200px;
+    margin-top: 20px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    #Resume .flex_for_Resume {
+        grid-template-areas:
+            "left_side"
+            "right_side"
+            "no_content";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto; /* Stack rows vertically */
+    }
+
+    #Resume .flex_for_Resume .no_content {
+        margin-top: 15px; /* Add margin between items if needed */
+    }
+
+    #Home {
+        padding: 15px;
+    }
+    #Home .intro h1 {
+        font-size: 2.5rem; /* Smaller font size for tablets */
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+    #Resume .flex_for_Resume {
+        padding: 10px;
+        grid-template-areas:
+            "left_side"
+            "right_side"
+            "no_content";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto; /* Stack rows vertically */
+    }
+
+    #Resume .flex_for_Resume .no_content {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    #Home {
+        padding: 10px;
+    }
+
+    #Home .intro h1 {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+    }
+}

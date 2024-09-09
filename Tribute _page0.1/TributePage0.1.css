@@ -1,0 +1,135 @@
+/* Resetting margins and padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Updated font fallback */
+    background-color: rgb(79, 111, 82);
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Image styling */
+img {
+    width: 300px;
+    margin: 15px;
+}
+
+/* Paragraph styling */
+p {
+    line-height: 1.5;
+    margin: 5px;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
+}
+
+a:hover {
+    color: rgb(236, 227, 206);
+    background-color: rgb(79, 111, 82);
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    margin: 15px;
+}
+
+ul li {
+    line-height: 1.5;
+    margin-bottom: 10px; /* Consistent margin for list items */
+}
+
+/* Header styling */
+header {
+    background-color: rgb(58, 77, 57);
+    height: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px; /* Add padding to prevent content from touching edges */
+}
+
+header .portfolio {
+    font-size: 1.5rem;
+    color: rgb(192, 199, 140);
+}
+
+header .portfolio:hover {
+    color: rgb(236, 227, 206);
+    background-color: rgb(79, 111, 82);
+}
+
+header nav {
+    display: flex;
+    gap: 20px; /* Add space between nav items */
+    
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Add space between list items */
+}
+
+header nav ul li a {
+    color: rgb(192, 199, 140);
+}
+
+/* Main section styling */
+main {
+    width: 100%;
+    margin-top: 100px; /* Adjusted margin for header */
+}
+
+main ol {
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+main ol li a {
+    color: rgb(192, 199, 140);
+}
+
+
+
+/* Section styling */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid rgb(58, 77, 57);
+    margin: 25px 0;
+    padding: 15px;
+}
+
+section p {
+    text-align: justify;
+    max-width: 1000px; /* Limit width for readability */
+    width: 100%;
+}
+
+/* Footer styling */
+footer {
+    background-color: rgb(41, 54, 41);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
