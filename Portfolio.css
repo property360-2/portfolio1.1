@@ -4,10 +4,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    --HeaderBackground: #1e1e1e;
-    --HeaderFont: #f4f4f4;
-    --HoverBackground: #404040;
-    --HoverText: #ffffff;
+    --HeaderBackground: hsl(0, 0%, 12%);
+    --HeaderFont: hsl(0, 0%, 96%);
+    --HoverBackground: hsl(0, 0%, 25%);
+    --HoverText: hsl(0, 0%, 100%);
 }
 
 body {
@@ -33,14 +33,11 @@ header {
 }
 
 .navbar {
+    list-style: none;
     display: flex;
     justify-content: center;
     gap: 2vw;
     flex-wrap: wrap;
-}
-
-ul {
-    list-style: none;
 }
 
 .navlink {
@@ -50,7 +47,10 @@ ul {
 }
 
 .navlink:hover,
-.card a:hover {
+.card a:hover ,
+footer a:hover,
+.works a:hover,
+.more_works:hover{
     background-color: var(--HoverBackground);
     color: var(--HoverText);
     border-radius: 5px;
@@ -133,6 +133,11 @@ main {
     grid-area: left_side;
 }
 
+#Resume .flex_for_Resume .left_side .Skills{
+    margin-left: 15px;
+    line-height: 1.7;
+}
+
 #Resume .flex_for_Resume .right_side {
     grid-area: right_side;
 }
@@ -181,6 +186,7 @@ main {
     overflow: hidden;
     border-top: 2px solid black;
     padding-bottom: 35px;
+    width: 100%;
 }
 
 #Portfolio::before {
@@ -197,6 +203,7 @@ main {
 #Portfolio > * {
     position: relative;
     z-index: 1;
+    text-align: center; /* Centering text here */
 }
 
 .works-container {
@@ -212,9 +219,35 @@ main {
     margin: 5px;
     padding: 5px;
     text-align: center;
-    background-color: #1e1e1e;
-    height: 200px;
+    background-color: hsla(0, 0%, 12%,0.50);
+    color: var(--HeaderFont);
+    height: 250px;
     width: 300px;
+    border-radius: 15px;
+}
+
+.works a{
+    font-weight: 800;
+}
+
+.works img{
+    width: 90%;
+    height: 50%;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.works a{
+    color: var(--HoverText);
+    text-decoration: none;
+}
+
+.more_works{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: var(--HeaderFont);
+    font-weight: 800;
 }
 
 footer {
@@ -234,9 +267,7 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover{
-    background-color: var(--HoverBackground);
-}
+
 
 a svg {
     margin: 5px;
@@ -260,7 +291,7 @@ a svg:hover {
 
     .works {
         width: 250px;
-        height: 150px;
+        height: 200px;
     }
 }
 

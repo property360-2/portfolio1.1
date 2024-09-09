@@ -1,0 +1,37 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    
+}
+body{
+    background-color: whitesmoke;
+
+}
+header{
+    font-size: 1.2rem;
+    text-align: center;
+}
+#img-div{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #e2e2e2;
+    padding: 20px;
+    margin: auto 20%;
+    max-width: 100%;
+}
+#tribute-info2{
+    margin:auto 20% ;
+    text-align: justify;
+}
+#rizal-quote{
+    margin:40px auto ;
+}
+.footer{
+    margin: auto 20%;
+}
+a:hover{
+    color: aliceblue;
+    background-color: black;
+}
